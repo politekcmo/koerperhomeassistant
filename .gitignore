@@ -1,0 +1,11 @@
+/*  #the slash enables directory inclusion
+.DS_Store
+secrets.yaml
+!.gitignore
+!automations.yaml
+!configuration.yaml
+!scenes.yaml
+!customization.yaml
+!README.md
+!/automation/  #include this WHOLE directory except otherwise noted exclusions
+
