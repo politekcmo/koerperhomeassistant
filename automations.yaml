@@ -1,0 +1,67 @@
+
+
+# - id: NotifyWhenDoorOpensDad
+#   alias: Notify of Door Opens (Dad's Phone)
+#   trigger:
+#   - entity_id: binary_sensor.screened_porch,binary_sensor.front_door,binary_sensor.garage_door,binary_sensor.patio,binary_sensor.utility_door
+#     platform: state
+#     from: 'off'
+#     to: 'on'
+#   condition: []
+#   action:
+#   - data:
+#       message: it opened     # message: it opened  #really not sure why this is necessary!!!
+#     data_template:
+#       message: '{{ trigger.to_state.attributes.friendly_name }} Opened '
+
+#END OLD STUFF
+
+# - action:
+#   - data:
+#       service: notify.ios_laurie
+#       data_template:
+#         message: '{{ trigger.to_state.attributes.friendly_name }} Opened '
+#         service: notify.ios_dads_ipad
+#   alias: Notify Mom
+#   condition: []
+#   id: '1523163367169'
+#   trigger:
+#   - entity_id: binary_sensor.screened_porch,binary_sensor.front_door,binary_sensor.garage_door,binary_sensor.patio,binary_sensor.utility_door
+#     from: 'Ready'
+#     platform: state
+#     to: 'Not Ready'
+#
+#   action:
+#     service: notify.ios_laurie
+#     data_template:
+#       message: '{{ trigger.to_state.attributes.friendly_name }} Opened '
+#
+
+- id: mom_notify_door
+  alias: Mom Notify Door
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.screened_porch,binary_sensor.front_door,binary_sensor.garage_door,binary_sensor.patio,binary_sensor.utility_door
+      to: 'on'
+  condition: []
+  action:
+    - service: notify.ios_laurie
+      data_template:
+        message: '{{ trigger.to_state.attributes.friendly_name }} Opened '
+
+
+
+# - id: NotifyWhenDoorOpensMom
+#   alias: Notify of Door Opens (Mom's Phone)
+#   trigger:
+#     - entity_id: binary_sensor.screened_porch,binary_sensor.front_door,binary_sensor.garage_door,binary_sensor.patio,binary_sensor.utility_door
+#       platform: state
+#       from: 'off'
+#       to: 'on'
+#   condition: []
+# - action:
+#   - data:
+#       message: it opened  #really not sure why this is necessary!!!
+#       data_template:
+#       message: '{{ trigger.to_state.attributes.friendly_name }} Opened '
+#       service: notify.ios_laurie
