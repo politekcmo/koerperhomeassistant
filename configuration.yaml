@@ -66,6 +66,14 @@ map:
 # Track the sun
 sun:
 
+#pihole iframe
+panel_iframe:
+  pihole:
+    title: Pi-hole
+    icon: mdi:block-helper
+    url: http://koerperhome.duckdns.org/admin/index.php
+    
+ 
 # Weather prediction
 sensor:
   - platform: yr
