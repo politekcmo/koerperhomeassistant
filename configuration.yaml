@@ -72,8 +72,11 @@ panel_iframe:
     title: Pi-hole
     icon: mdi:block-helper
     url: http://koerperhome.duckdns.org/admin/index.php
-    
- 
+
+#pihole sensor
+sensor:
+  - platform: pi_hole
+
 # Weather prediction
 sensor:
   - platform: yr
