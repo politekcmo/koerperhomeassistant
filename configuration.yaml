@@ -80,7 +80,7 @@ climate:
     # away_heat_temperature:
 
 envisalink:
-  host: !secret_envisalink_host
+  host: !secret envisalink_host
   panel_type: DSC
   user_name: !secret envisalink_user
   password: !secret envisalink_password
